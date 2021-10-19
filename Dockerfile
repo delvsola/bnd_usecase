@@ -23,4 +23,4 @@ RUN python3.8 -m pip install -r requirements.txt
 
 
 # Test command to check if the GPU is detected 
-ENTRYPOINT ["python3.8", "train.py", "--img", "1280", "--batch", "32", "--epochs", "300", "--data", "signatures.yaml", "--weights", "yolov5l.pt", "--device", "0"]
+ENTRYPOINT ["python3.8", "train.py", "--img", "1280", "--batch", "16", "--epochs", "300", "--data", "signatures.yaml", "--weights", "yolov5l.pt", "--device", "0"]
