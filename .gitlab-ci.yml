@@ -12,12 +12,12 @@ run-image:
   timeout: 4 hours
   script:
     - echo "$CI_PROJECT_PATH_SLUG"
-    - nvidia-docker run --ipc=host --gpus all -v ${PWD}/output:/app/runs "$CI_PROJECT_PATH_SLUG"
+    - nvidia-docker run --ipc=host --gpus all -v ${PWD}/output2:/app/runs "$CI_PROJECT_PATH_SLUG"
   rules:
     - if: $CI_COMMIT_BRANCH
       exists:
         - Dockerfile
   artifacts:
     paths:
-      - "output/*"
+      - "output2/*"
 
