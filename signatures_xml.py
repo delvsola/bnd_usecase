@@ -6,10 +6,10 @@ from time import process_time
 start = process_time()
 count_sig = 0
 xml_namespace = "{http://lamp.cfar.umd.edu/GEDI}"
-if not op.isdir("data/labels"):
-    os.makedirs("data/labels")
+if not op.isdir("datasets/labels"):
+    os.makedirs("datasets/labels")
 
-for root, folders, files in os.walk("data/train_xml"):
+for root, folders, files in os.walk("datasets/train_xml"):
     for file in files:
         xml_root = et.parse(op.join(root, file)).getroot()
         signatures = []
@@ -31,7 +31,7 @@ for root, folders, files in os.walk("data/train_xml"):
                     signatures.append((0, center_x, center_y, norm_width, norm_height))
                     count_sig += 1
         if signatures:
-            fp = op.join("data/labels", file.replace(".xml", ".txt"))
+            fp = op.join("datasets/labels", file.replace(".xml", ".txt"))
             with open(fp, "w") as f:
                 lines = []
                 for sign in signatures:

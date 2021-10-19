@@ -8,7 +8,7 @@ start = process_time()
 count_sig = 0
 sel = CSSSelector('[gedi_type="DLSignature"]')
 
-for root, folders, files in os.walk("data/train_xml"):
+for root, folders, files in os.walk("datasets/train_xml"):
     for file in files:
         tree = etree.parse(op.join(root, file))
         xml_root = tree.getroot()
