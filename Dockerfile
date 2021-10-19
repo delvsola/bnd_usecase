@@ -4,6 +4,7 @@ FROM nvidia/cuda:11.1.1-runtime-ubuntu18.04
 RUN mkdir /app
 WORKDIR /app
 COPY . /app
+RUN mkdir /app/runs
 ENV CUDA_LAUNCH_BLOCKING=1
 
 # Update system
@@ -23,4 +24,4 @@ RUN python3.8 -m pip install -r requirements.txt
 
 
 # Test command to check if the GPU is detected 
-ENTRYPOINT ["python3.8", "train.py", "--img", "1280", "--batch", "4", "--epochs", "300", "--data", "signatures.yaml", "--weights", "yolov5m.pt", "--device", "0"]
+ENTRYPOINT ["python3.8", "train.py", "--img", "640", "--batch", "16", "--epochs", "5", "--data", "signatures.yaml", "--weights", "yolov5l.pt", "--device", "0"]
