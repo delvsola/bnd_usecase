@@ -12,7 +12,7 @@ RUN apt upgrade -y
 # Install python 3.8
 RUN DEBIAN_FRONTEND="noninteractive" apt install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN DEBIAN_FRONTEND="noninteractive" apt install -y python3.8 python3-pip 
+RUN DEBIAN_FRONTEND="noninteractive" apt install -y python3.8 python3-pip python3-opencv
 
 # Install python tools
 RUN python3.8 -m pip install --upgrade setuptools pip distlib
