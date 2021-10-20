@@ -13,7 +13,7 @@ run-image:
   script:
     - echo "PROJECT:" ${CI_PROJECT_PATH_SLUG}
     - mkdir -p ${PWD}/${CI_JOB_ID}
-    - nvidia-docker run --ipc=host --gpus all -v ${PWD}/${CI_JOB_ID}:/output ${CI_PROJECT_PATH_SLUG}
+    - nvidia-docker run --ipc=host --gpus all -v ${PWD}/${CI_JOB_ID}:/app/runs/ ${CI_PROJECT_PATH_SLUG}
   rules:
     - if: $CI_COMMIT_BRANCH
       exists:
