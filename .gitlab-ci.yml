@@ -6,8 +6,6 @@ stages:
 build-image:
   stage: build-image
   script:
-    - sudo ls -la
-    - sudo chmod -R 0777 ./*
     - docker build -t ${CI_PROJECT_PATH_SLUG} .
 run-image:
   stage: run-image
