@@ -6,6 +6,7 @@ stages:
 build-image:
   stage: build-image
   script:
+    - sudo chown -R gitlab-runner  ${PWD}/${CI_JOB_ID}
     - docker build -t ${CI_PROJECT_PATH_SLUG} .
 run-image:
   stage: run-image
