@@ -24,7 +24,8 @@ st.title("Signature Detection Demo using YoloV5")
 st.caption("By Solan Delvenne")
 
 st.markdown("""
-This a demo showcasing 3 different YOLO Image detection models. All trained on the same parameters.
+This a demo showcasing 3 different YOLO Image detection models. All trained on the same parameters except batch size 
+due to GPU constraints.
 
 Models: yolov5s, yolov5m, yolov5l
 
