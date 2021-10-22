@@ -2,7 +2,7 @@
 
 A usecase provided by Business & Decision around Object Detection.
 
-My solution is based on (YOLOv5)[https://github.com/ultralytics/yolov5]
+My solution is based on [YOLOv5](https://github.com/ultralytics/yolov5)
 
 
 ## Installation
